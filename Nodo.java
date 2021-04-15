@@ -1,71 +1,103 @@
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Nodo.
+ */
+
+/**
+ * @author jiio2
+ *13/04/2021 - 15:06:33
+ * 
+ */
 public class Nodo {
 
+    /** The entrada. */
     private Entrada entrada;
+    
+    /** The padre. */
     Nodo padre;
-    Nodo left;
-    Nodo right;
+    
+    /** The izquierdo. */
+    Nodo izquierdo;
+    
+    /** The derecho. */
+    Nodo derecho;
 
 
-    public void inorder() {
-        if (left != null) {
-        	left.inorder();
+    /**
+     * Ordenar.
+     */
+    public void ordenar() { //esta función es recursiva para ordenar el árbol
+        if (izquierdo != null) {
+            izquierdo.ordenar();
         }
-        this.visit();
-        if (right != null) {
-        	right.inorder();
+        this.visitar();
+        if (derecho != null) {
+            derecho.ordenar();
         }
     }
 
-    public void visit()
-    {
+    /**
+     * Visitar.
+     */
+    public void visitar(){ // esta función nos da el foramto de impresión del orden en inglés
         String english = this.getEntrada().valueEnglish;
         String spanish = this.getEntrada().valueSpanish;
         String french = this.getEntrada().valueFrench;
 
         System.out.println( "(" + english + "," + spanish + "," + french + ")"  );
     }
-
-
     
-    public String visit_english(String key){
-    	
-        if (entrada.getKey() == key) {
+    /**
+     * Visit english.
+     *
+     * @param key the key
+     * @return the string
+     */
+    public String visit_english(String key) { // nos regresa el valor de la palabra en ingles asignado a "key"
+
         	return  entrada.getValueEnglish();
-        }else {
-        	return "*" + key + "*";
-        }
+
     }
     
-    public String visit_spanish(String key)
-    {
-        if (entrada.getKey() == key) {
-        	return  entrada.getValueSpanish();
-        }else {
-        	return "*" + key + "*";
-        }
-    }
+    /**
+     * Visit spanish.
+     *
+     * @param key the key
+     * @return the string
+     */
+    public String visit_spanish(String key) { // nos regresa el valor de la palabra en ingles asignado a "key"
+
+    	return  entrada.getValueSpanish();
+
+}
     
-    public String visit_french(String key)
-    {
-        if (entrada.getKey() == key) {
+    /**
+     * Visit french.
+     *
+     * @param key the key
+     * @return the string
+     */
+    public String visit_french(String key){ // nos regresa el valor de la palabra en frances asignado a "key"
+
         	return  entrada.getValueFrench();
-        }else {
-        	return "*" + key + "*";
-        }
+
     }
 
-	/**
-	 * @return the entrada
-	 */
-	public Entrada getEntrada() {
-		return entrada;
-	}
+    /**
+     * Gets the entrada.
+     *
+     * @return the entrada
+     */
+    public Entrada getEntrada() {
+        return entrada;
+    }
 
-	/**
-	 * @param entrada the entrada to set
-	 */
-	public void setEntrada(Entrada entrada) {
-		this.entrada = entrada;
-	}
-
+    /**
+     * Sets the entrada.
+     *
+     * @param entrada the new entrada
+     */
+    public void setEntrada(Entrada entrada) {
+        this.entrada = entrada;
+    }
 }

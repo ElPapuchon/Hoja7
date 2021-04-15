@@ -22,9 +22,9 @@ class BSTTest {
 	
 	String [] data = oracion.split(" ");
 	
-	String palabra_ingles = "woman";
-	String palabra_espanol = "mujer";
-	String palabra_frances = "femme";
+	String palabra_ingles = "homework";
+	String palabra_espanol = "tarea";
+	String palabra_frances = "devoirs";
 	
 	public BSTTest() {
     }
@@ -45,7 +45,7 @@ class BSTTest {
     	
     	arbol.Insertar(1, palabra_ingles, palabra_espanol, palabra_frances);
     	
-    	assertEquals("mujer",  arbol.Find_spanish(palabra_ingles));
+    	assertEquals("tarea",  arbol.Find_spanish(palabra_ingles));
     	
     }
     
@@ -54,9 +54,7 @@ class BSTTest {
     	
     	arbol.Insertar(1, palabra_ingles, palabra_espanol, palabra_frances);
     	
-    	assertEquals("femme",  arbol.Find_french(palabra_ingles));
-    	
-    	assertEquals("woman", data[1]);
+    	assertEquals("devoirs",  arbol.Find_french(palabra_ingles));
     	
     }
     
@@ -65,7 +63,7 @@ class BSTTest {
     	
     	arbol.Insertar(2, palabra_ingles, palabra_espanol, palabra_frances);
     	
-    	assertEquals("woman",  arbol.Find_english(palabra_espanol));
+    	assertEquals("homework",  arbol.Find_english(palabra_espanol));
     	
     }
         
